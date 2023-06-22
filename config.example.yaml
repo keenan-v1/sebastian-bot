@@ -1,0 +1,9 @@
+---
+bot_token: 1234567890:ThisIsYourBotToken
+environment: development
+# To obtain a channel ID, use the Web client and navigate to the channel
+# Next, copy the last part of the URL from after the #. This is going to
+# be a 10-digit number with a -. Add 100 between the - and the leading
+# digit. Viola!
+channel_id: -1001234567890
+log_level: INFO
