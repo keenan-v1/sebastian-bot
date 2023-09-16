@@ -10,8 +10,10 @@ final log = Logger('sebastian_bot');
 
 void runBot() async {
   final config = Config();
-  final username = (await Telegram(config.botToken).getMe()).username;
-  final teledart = TeleDart(config.botToken, Event(username!));
+  final telegram = Telegram(config.botToken);
+  final username = (await telegram.getMe()).username;
+  final fetcher = LongPolling(telegram, timeout: 60, limit: 1);
+  final teledart = TeleDart(config.botToken, Event(username!), fetcher: fetcher);
 
   log.info('Bot username: @$username');
 
